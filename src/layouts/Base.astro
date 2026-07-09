@@ -1,0 +1,73 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource-variable/space-grotesk';
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import site from '../content/site.json';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'AI-NOVA Labs — Investigación, robótica e innovación industrial',
+  description = 'Conectamos investigación, tecnología y mercado para que la innovación se mida en impacto. Robótica, I+D y laboratorio móvil EnerLabsQ desde Santiago de Chile.',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={site.name} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: site.name,
+      url: site.domain,
+      email: site.email,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Antonio Bellet 193, Oficina 1210',
+        addressLocality: 'Providencia',
+        addressRegion: 'Región Metropolitana',
+        addressCountry: 'CL',
+      },
+    })} />
+  </head>
+  <body>
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      // Aparición de secciones al hacer scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold: 0.15 }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

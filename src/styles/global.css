@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/*
+  Design tokens — un solo lugar para cambiar la identidad visual del sitio.
+  Paleta: azul noche (fondos) + azul eléctrico / cian (acentos).
+*/
+@theme {
+  --color-navy-950: #030812;
+  --color-navy-900: #061024;
+  --color-navy-800: #0a1d3f;
+  --color-navy-700: #12294f;
+  --color-navy-600: #1c3a6e;
+
+  --color-accent-500: #2e7cf6;
+  --color-accent-400: #4f93ff;
+  --color-cyan-400: #38bdf8;
+
+  --color-ink-100: #f3f7ff;
+  --color-ink-300: #b9c6dd;
+  --color-ink-400: #8fa1c0;
+
+  --font-display: "Space Grotesk Variable", "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter Variable", "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-navy-950);
+  color: var(--color-ink-100);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-accent-500);
+  color: white;
+}
+
+/* Texto con degradado de acento (palabras clave de titulares) */
+.text-gradient {
+  background: linear-gradient(92deg, var(--color-accent-400), var(--color-cyan-400));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animación de aparición al hacer scroll (activada por JS con .is-visible) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Flecha de scroll del hero */
+@keyframes float-down {
+  0%, 100% { transform: translateY(0); opacity: 0.9; }
+  50% { transform: translateY(10px); opacity: 0.4; }
+}
+.scroll-arrow {
+  animation: float-down 2s ease-in-out infinite;
+}

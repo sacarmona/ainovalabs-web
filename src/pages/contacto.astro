@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import t from '../content/i18n/es.json';
+import site from '../content/site.json';
+---
+
+<Base title="Contacto — AI-NOVA Labs" description={t.contact.subtitle}>
+  <PageHeader title={t.contact.title} intro={t.contact.subtitle} />
+
+  <section class="pb-24">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-5 md:px-8">
+      <form
+        id="contact-form"
+        class="reveal md:col-span-3 rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-10"
+        method="POST"
+        action={site.formEndpoint || undefined}
+      >
+        <div class="grid gap-6 sm:grid-cols-2">
+          <label class="block sm:col-span-1">
+            <span class="text-sm font-medium text-ink-300">{t.contact.fields.name}</span>
+            <input
+              type="text" name="name" required
+              class="mt-2 w-full rounded-xl border border-white/15 bg-navy-950/60 px-4 py-3 text-ink-100 outline-none transition focus:border-accent-400"
+            />
+          </label>
+          <label class="block sm:col-span-1">
+            <span class="text-sm font-medium text-ink-300">{t.contact.fields.email}</span>
+            <input
+              type="email" name="email" required
+              class="mt-2 w-full rounded-xl border border-white/15 bg-navy-950/60 px-4 py-3 text-ink-100 outline-none transition focus:border-accent-400"
+            />
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-sm font-medium text-ink-300">{t.contact.fields.company}</span>
+            <input
+              type="text" name="company"
+              class="mt-2 w-full rounded-xl border border-white/15 bg-navy-950/60 px-4 py-3 text-ink-100 outline-none transition focus:border-accent-400"
+            />
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-sm font-medium text-ink-300">{t.contact.fields.message}</span>
+            <textarea
+              name="message" rows="5" required
+              class="mt-2 w-full rounded-xl border border-white/15 bg-navy-950/60 px-4 py-3 text-ink-100 outline-none transition focus:border-accent-400"
+            ></textarea>
+          </label>
+        </div>
+        <button
+          type="submit"
+          class="mt-8 w-full rounded-full bg-accent-500 px-8 py-3.5 font-semibold text-white shadow-lg shadow-accent-500/30 transition hover:bg-accent-400 sm:w-auto"
+        >
+          {t.contact.submit}
+        </button>
+        <p id="form-success" class="mt-4 hidden text-sm text-cyan-400">{t.contact.successMessage}</p>
+      </form>
+
+      <aside class="reveal md:col-span-2 rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-10">
+        <h2 class="font-display text-xl font-bold">{t.contact.directTitle}</h2>
+        <ul class="mt-6 space-y-4 text-ink-300">
+          <li>
+            <a href={`mailto:${site.email}`} class="font-medium text-cyan-400 hover:underline">{site.email}</a>
+          </li>
+          {site.phones.map((phone) => (
+            <li><a href={`tel:${phone.replace(/\s/g, '')}`} class="hover:text-white">{phone}</a></li>
+          ))}
+          <li class="leading-relaxed text-ink-400">{site.address}</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+</Base>
+
+<script>
+  import site from '../content/site.json';
+
+  // Sin endpoint configurado (site.json → formEndpoint), el formulario abre el
+  // cliente de correo con los datos precargados como respaldo.
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  form.addEventListener('submit', (e) => {
+    if (site.formEndpoint) return; // el endpoint (Formspree/Resend) maneja el envío
+    e.preventDefault();
+    const data = new FormData(form);
+    const subject = encodeURIComponent(`Contacto web — ${data.get('name')}`);
+    const body = encodeURIComponent(
+      `Nombre: ${data.get('name')}\nEmail: ${data.get('email')}\nEmpresa: ${data.get('company') || '-'}\n\n${data.get('message')}`
+    );
+    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+    document.getElementById('form-success')?.classList.remove('hidden');
+  });
+</script>

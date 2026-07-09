@@ -1,0 +1,156 @@
+{
+  "nav": {
+    "links": [
+      { "label": "Servicios", "href": "/servicios" },
+      { "label": "Robótica", "href": "/robotica" },
+      { "label": "EnerLabsQ", "href": "/enerlabsq" },
+      { "label": "Nosotros", "href": "/nosotros" }
+    ],
+    "cta": "Contáctanos"
+  },
+  "hero": {
+    "kicker": "Investigación · Robótica · Innovación industrial",
+    "titleLine1": "La innovación real",
+    "titleLine2": "se mide en",
+    "titleAccent": "impacto",
+    "subtitle": "De la idea en laboratorio a un servicio que transforma industrias. En AI-NOVA Labs conectamos investigación, tecnología y mercado para que tu próximo servicio no sea solo nuevo, sino necesario.",
+    "ctaPrimary": "Conversemos",
+    "ctaSecondary": "Conoce nuestros servicios",
+    "scrollHint": "Descubre más"
+  },
+  "stats": {
+    "title": "Tecnología que la industria adopta",
+    "subtitle": "Porque la tecnología no avanza sola: avanza cuando la industria la adopta.",
+    "items": [
+      { "value": 15, "suffix": "+", "label": "Proyectos de I+D ejecutados" },
+      { "value": 6, "suffix": "", "label": "Industrias impactadas" },
+      { "value": 10, "suffix": "+", "label": "Años de experiencia en investigación" },
+      { "value": 100, "suffix": "%", "label": "Foco en adopción industrial" }
+    ]
+  },
+  "pillars": {
+    "title": "Lo que hacemos",
+    "subtitle": "Tres líneas de trabajo, un mismo objetivo: convertir investigación en servicios con impacto industrial real.",
+    "items": [
+      {
+        "id": "robotica",
+        "kicker": "Robótica y tecnología",
+        "title": "Automatización que impulsa la productividad",
+        "text": "Soluciones avanzadas de robótica que aumentan la productividad y preparan a tu empresa para la era digital: integración, automatización de procesos y sistemas inteligentes.",
+        "cta": "Descubre la robótica",
+        "href": "/robotica",
+        "image": "/images/pillar-robotics.jpg"
+      },
+      {
+        "id": "investigacion",
+        "kicker": "Investigación y desarrollo",
+        "title": "Del laboratorio al mercado",
+        "text": "Servicios de I+D esenciales para el avance tecnológico. Partimos por el cliente: descubrimos lo que necesita y desarrollamos la tecnología que lo resuelve.",
+        "cta": "Conoce nuestros servicios",
+        "href": "/servicios",
+        "image": "/images/pillar-research.jpg"
+      },
+      {
+        "id": "enerlabsq",
+        "kicker": "Plataforma EnerLabsQ",
+        "title": "Laboratorio móvil, resultados en terreno",
+        "text": "Nuestra plataforma de desarrollo e investigación de soluciones de laboratorio móvil lleva la capacidad analítica directamente a donde está la operación.",
+        "cta": "Conoce EnerLabsQ",
+        "href": "/enerlabsq",
+        "image": "/images/pillar-enerlabsq.jpg"
+      }
+    ]
+  },
+  "method": {
+    "title": "Cómo trabajamos",
+    "subtitle": "Un método probado para que la innovación no se quede en el laboratorio.",
+    "items": [
+      { "icon": "target", "title": "Partimos por el cliente", "text": "Descubrimos lo que tu operación necesita antes de proponer tecnología." },
+      { "icon": "flask", "title": "Investigación aplicada", "text": "Nuestro equipo investiga y desarrolla con libertad, pero siempre orientado a resolver problemas reales." },
+      { "icon": "cog", "title": "Prototipado rápido", "text": "Convertimos hipótesis en prototipos funcionales que se prueban en condiciones reales." },
+      { "icon": "chart", "title": "Impacto medible", "text": "Definimos métricas de adopción e impacto industrial desde el día uno." },
+      { "icon": "handshake", "title": "Transferencia tecnológica", "text": "Acompañamos la adopción: capacitación, integración y soporte continuo." },
+      { "icon": "rocket", "title": "Escalamiento", "text": "Llevamos la solución de piloto a servicio productivo, listo para crecer." }
+    ]
+  },
+  "cta": {
+    "title": "Aquí comienza ese camino",
+    "text": "¿Tienes un desafío industrial que la tecnología puede resolver? Conversemos sobre cómo convertirlo en tu próxima ventaja competitiva.",
+    "primary": "Contáctanos",
+    "secondary": "Conoce al equipo"
+  },
+  "footer": {
+    "tagline": "Conectamos investigación, tecnología y mercado para que la innovación se mida en impacto.",
+    "columns": [
+      {
+        "title": "Empresa",
+        "links": [
+          { "label": "Sobre nosotros", "href": "/nosotros" },
+          { "label": "Servicios", "href": "/servicios" },
+          { "label": "Contacto", "href": "/contacto" }
+        ]
+      },
+      {
+        "title": "Soluciones",
+        "links": [
+          { "label": "Robótica", "href": "/robotica" },
+          { "label": "I+D", "href": "/servicios" },
+          { "label": "EnerLabsQ", "href": "/enerlabsq" }
+        ]
+      }
+    ],
+    "contactTitle": "Contacto",
+    "rights": "Todos los derechos reservados."
+  },
+  "contact": {
+    "title": "Conversemos",
+    "subtitle": "Cuéntanos tu desafío y te responderemos a la brevedad.",
+    "fields": {
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "company": "Empresa (opcional)",
+      "message": "Mensaje"
+    },
+    "submit": "Enviar mensaje",
+    "successMessage": "¡Gracias! Tu mensaje fue enviado. Te contactaremos pronto.",
+    "directTitle": "Contacto directo"
+  },
+  "pages": {
+    "servicios": {
+      "title": "Servicios de investigación y desarrollo",
+      "intro": "Ofrecemos servicios de I+D esenciales para el avance tecnológico, diseñados para ser útiles y relevantes para nuestros clientes.",
+      "sections": [
+        { "title": "Investigación aplicada", "text": "Estudios y desarrollo tecnológico orientados a resolver problemas concretos de la industria, con metodología científica y foco en resultados." },
+        { "title": "Desarrollo de soluciones", "text": "Diseñamos y construimos soluciones a medida: desde prototipos de laboratorio hasta servicios productivos operando en terreno." },
+        { "title": "Consultoría en transformación digital", "text": "Acompañamos a las empresas en la adopción de tecnología: diagnóstico, hoja de ruta e implementación." }
+      ]
+    },
+    "robotica": {
+      "title": "Robótica y tecnología",
+      "intro": "Sea parte del futuro con nuestros servicios avanzados de robótica. Soluciones innovadoras que aumentan la productividad y hacen que tu empresa triunfe en la era digital.",
+      "sections": [
+        { "title": "Automatización industrial", "text": "Integración de sistemas robóticos en líneas y procesos productivos para aumentar eficiencia, seguridad y trazabilidad." },
+        { "title": "Robótica de servicio", "text": "Plataformas robóticas para inspección, monitoreo y operación en entornos exigentes." },
+        { "title": "Sistemas inteligentes", "text": "Percepción, visión artificial e inteligencia aplicada para que los sistemas tomen mejores decisiones." }
+      ]
+    },
+    "enerlabsq": {
+      "title": "EnerLabsQ",
+      "intro": "Nuestra plataforma de desarrollo e investigación de soluciones de laboratorio móvil: capacidad analítica de laboratorio directamente en terreno, donde está la operación.",
+      "sections": [
+        { "title": "Laboratorio móvil", "text": "Unidades equipadas para realizar análisis y ensayos en terreno, reduciendo tiempos y costos logísticos." },
+        { "title": "Investigación en energía", "text": "Desarrollo de soluciones para el sector energético, con foco en calidad, medición y diagnóstico." },
+        { "title": "Datos y reportería", "text": "Resultados digitalizados y trazables, disponibles para tu equipo en tiempo real." }
+      ]
+    },
+    "nosotros": {
+      "title": "Sobre nosotros",
+      "intro": "Somos una compañía chilena de investigación, desarrollo tecnológico y robótica. Nuestra misión es conectar la innovación de laboratorio con la adopción industrial.",
+      "sections": [
+        { "title": "Nuestra visión", "text": "Una industria que adopta tecnología de punta desarrollada localmente, con impacto real y medible." },
+        { "title": "Nuestro equipo", "text": "Investigadores e ingenieros con la libertad de explorar y la disciplina de entregar soluciones que funcionan en terreno." },
+        { "title": "Dónde estamos", "text": "Operamos desde Providencia, Santiago de Chile, con proyectos a lo largo del país." }
+      ]
+    }
+  }
+}

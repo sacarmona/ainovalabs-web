@@ -1,0 +1,51 @@
+---
+import t from '../content/i18n/es.json';
+---
+
+<section id="stats" class="relative border-y border-white/10 bg-navy-900/60 py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5 md:px-8">
+    <div class="reveal mx-auto max-w-2xl text-center">
+      <h2 class="font-display text-3xl font-bold md:text-5xl">{t.stats.title}</h2>
+      <p class="mt-4 text-lg text-ink-300">{t.stats.subtitle}</p>
+    </div>
+
+    <div class="mt-14 grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
+      {t.stats.items.map((item) => (
+        <div class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center md:p-8">
+          <p class="font-display text-4xl font-bold text-gradient md:text-5xl">
+            <span class="stat-counter" data-target={item.value}>0</span>{item.suffix}
+          </p>
+          <p class="mt-3 text-sm leading-snug text-ink-400">{item.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Contadores animados al entrar en pantalla
+  const animate = (el: HTMLElement) => {
+    const target = Number(el.dataset.target ?? 0);
+    const duration = 1600;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const p = Math.min((now - start) / duration, 1);
+      el.textContent = String(Math.round(target * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          animate(entry.target as HTMLElement);
+          counterObserver.unobserve(entry.target);
+        }
+      }
+    },
+    { threshold: 0.5 }
+  );
+  document.querySelectorAll<HTMLElement>('.stat-counter').forEach((el) => counterObserver.observe(el));
+</script>

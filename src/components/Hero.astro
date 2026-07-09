@@ -1,0 +1,55 @@
+---
+import t from '../content/i18n/es.json';
+---
+
+<section class="relative flex min-h-screen items-center justify-center overflow-hidden">
+  <!-- Fondo: degradado profundo + grilla + resplandores -->
+  <div class="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy-950 to-navy-950" aria-hidden="true"></div>
+  <div
+    class="absolute inset-0 opacity-[0.13]"
+    style="background-image: linear-gradient(rgba(79,147,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(79,147,255,.5) 1px, transparent 1px); background-size: 72px 72px; mask-image: radial-gradient(ellipse 90% 65% at 50% 40%, black 30%, transparent 75%);"
+    aria-hidden="true"
+  ></div>
+  <div class="absolute left-1/2 top-[-20%] h-[560px] w-[900px] -translate-x-1/2 rounded-full bg-accent-500/20 blur-[140px]" aria-hidden="true"></div>
+  <div class="absolute bottom-[-30%] right-[-10%] h-[420px] w-[560px] rounded-full bg-cyan-400/10 blur-[120px]" aria-hidden="true"></div>
+
+  <div class="relative z-10 mx-auto max-w-5xl px-5 pb-24 pt-36 text-center md:px-8">
+    <p class="reveal mx-auto inline-block rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium tracking-widest text-ink-300 uppercase">
+      {t.hero.kicker}
+    </p>
+
+    <h1 class="reveal mt-8 font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl">
+      {t.hero.titleLine1}<br />
+      {t.hero.titleLine2} <span class="text-gradient">{t.hero.titleAccent}</span>
+    </h1>
+
+    <p class="reveal mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-ink-300 md:text-xl">
+      {t.hero.subtitle}
+    </p>
+
+    <div class="reveal mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <a
+        href="/contacto"
+        class="w-full rounded-full bg-accent-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-accent-500/30 transition hover:bg-accent-400 sm:w-auto"
+      >
+        {t.hero.ctaPrimary}
+      </a>
+      <a
+        href="/servicios"
+        class="w-full rounded-full border border-white/20 px-8 py-3.5 text-base font-semibold text-ink-100 transition hover:border-white/50 hover:bg-white/5 sm:w-auto"
+      >
+        {t.hero.ctaSecondary}
+      </a>
+    </div>
+  </div>
+
+  <a
+    href="#stats"
+    class="scroll-arrow absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-ink-300"
+    aria-label={t.hero.scrollHint}
+  >
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 4v16m0 0l-6-6m6 6l6-6" />
+    </svg>
+  </a>
+</section>
