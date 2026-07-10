@@ -1,0 +1,89 @@
+---
+/*
+  Divisor entre secciones: línea de horizonte con resplandor y partículas
+  que ascienden lentamente (campo de estrellas sutil). Solo HTML + CSS.
+*/
+const particles = [
+  { x: '6%',  size: 2, dur: '11s', delay: '0s',    color: '#38BDF8' },
+  { x: '14%', size: 3, dur: '14s', delay: '3.2s',  color: '#3EC7A6' },
+  { x: '22%', size: 2, dur: '12s', delay: '6.5s',  color: '#8FA1C0' },
+  { x: '31%', size: 2, dur: '15s', delay: '1.8s',  color: '#38BDF8' },
+  { x: '39%', size: 3, dur: '10s', delay: '8s',    color: '#3EC7A6' },
+  { x: '47%', size: 2, dur: '13s', delay: '4.6s',  color: '#8FA1C0' },
+  { x: '55%', size: 2, dur: '16s', delay: '0.9s',  color: '#38BDF8' },
+  { x: '63%', size: 3, dur: '11s', delay: '7.1s',  color: '#3EC7A6' },
+  { x: '71%', size: 2, dur: '14s', delay: '2.7s',  color: '#38BDF8' },
+  { x: '79%', size: 2, dur: '12s', delay: '9.4s',  color: '#8FA1C0' },
+  { x: '87%', size: 3, dur: '15s', delay: '5.3s',  color: '#3EC7A6' },
+  { x: '94%', size: 2, dur: '13s', delay: '1.2s',  color: '#38BDF8' },
+];
+---
+
+<div class="dividerfx" aria-hidden="true">
+  <div class="horizon"></div>
+  <div class="glow"></div>
+  {particles.map((p) => (
+    <span
+      class="particle"
+      style={`--x:${p.x}; --size:${p.size}px; --dur:${p.dur}; --delay:${p.delay}; --c:${p.color}`}
+    ></span>
+  ))}
+</div>
+
+<style>
+  .dividerfx {
+    position: relative;
+    height: 11rem;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  /* línea de horizonte */
+  .horizon {
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    width: min(72rem, 92%);
+    height: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, rgba(62, 199, 166, 0.55) 30%, rgba(56, 189, 248, 0.55) 70%, transparent);
+  }
+
+  /* resplandor bajo el horizonte */
+  .glow {
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    width: min(48rem, 80%);
+    height: 5rem;
+    transform: translate(-50%, -30%);
+    background: radial-gradient(ellipse at center, rgba(46, 127, 168, 0.28), transparent 70%);
+    filter: blur(12px);
+  }
+
+  /* partículas que ascienden y se desvanecen */
+  .particle {
+    position: absolute;
+    left: var(--x);
+    top: 70%;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 9999px;
+    background: var(--c);
+    opacity: 0;
+    animation: rise var(--dur) linear infinite;
+    animation-delay: var(--delay);
+  }
+  @keyframes rise {
+    0%   { transform: translateY(0);      opacity: 0; }
+    12%  { opacity: 0.7; }
+    60%  { opacity: 0.35; }
+    100% { transform: translateY(-8.5rem); opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .particle {
+      animation: none;
+    }
+  }
+</style>

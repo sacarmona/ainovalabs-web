@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
 import CtaBand from '../components/CtaBand.astro';
+import DividerFX from '../components/DividerFX.astro';
+import WaveFX from '../components/WaveFX.astro';
 import t from '../content/i18n/es.json';
 
 export function getStaticPaths() {
@@ -13,7 +15,9 @@ const data = t.pages[page as keyof typeof t.pages];
 ---
 
 <Base title={`${data.title} — AI-NOVA Labs`} description={data.intro}>
-  <PageHeader title={data.title} intro={data.intro} />
+  <PageHeader title={data.title} intro={data.intro}>
+    {page === 'enerlabsq' && <WaveFX slot="fx" />}
+  </PageHeader>
 
   <section class="pb-20 md:pb-28">
     <div class="mx-auto grid max-w-7xl gap-6 px-5 md:grid-cols-3 md:px-8">
@@ -27,5 +31,6 @@ const data = t.pages[page as keyof typeof t.pages];
     </div>
   </section>
 
+  <DividerFX />
   <CtaBand />
 </Base>
