@@ -1,0 +1,97 @@
+---
+/*
+  Animación para Nosotros: "órbitas" — anillos concéntricos con satélites
+  girando a distintas velocidades alrededor de un núcleo que late
+  (el equipo alrededor de una misión común). SVG con rotación SMIL + CSS.
+  Centrada hacia la derecha para no competir con el título.
+*/
+const CX = 880;
+const CY = 300;
+---
+
+<div class="orbitfx" aria-hidden="true">
+  <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" fill="none">
+    <defs>
+      <linearGradient id="orbit-g" x1={CX - 220} y1={CY - 220} x2={CX + 220} y2={CY + 220} gradientUnits="userSpaceOnUse">
+        <stop stop-color="#3EC7A6" />
+        <stop offset="1" stop-color="#2E7FA8" />
+      </linearGradient>
+      <radialGradient id="orbit-core" cx="0.5" cy="0.5" r="0.5">
+        <stop stop-color="#38BDF8" />
+        <stop offset="1" stop-color="#2E7FA8" />
+      </radialGradient>
+    </defs>
+
+    <!-- anillos orbitales -->
+    <g stroke="url(#orbit-g)">
+      <circle cx={CX} cy={CY} r="90"  stroke-width="1"   opacity="0.35" />
+      <circle cx={CX} cy={CY} r="150" stroke-width="1"   opacity="0.25" stroke-dasharray="3 7" />
+      <circle cx={CX} cy={CY} r="215" stroke-width="1.2" opacity="0.18" />
+    </g>
+
+    <!-- núcleo que late -->
+    <circle class="core" cx={CX} cy={CY} r="11" fill="url(#orbit-core)" />
+    <circle class="halo" cx={CX} cy={CY} r="22" stroke="#38BDF8" stroke-width="1.5" />
+
+    <!-- satélites: cada grupo rota a su velocidad (SMIL) -->
+    <g class="sats">
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from={`0 ${CX} ${CY}`} to={`360 ${CX} ${CY}`} dur="18s" repeatCount="indefinite" />
+        <circle cx={CX + 90} cy={CY} r="5" fill="#3EC7A6" />
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from={`360 ${CX} ${CY}`} to={`0 ${CX} ${CY}`} dur="30s" repeatCount="indefinite" />
+        <circle cx={CX - 150} cy={CY} r="6" fill="#38BDF8" />
+        <circle cx={CX + 75} cy={CY + 130} r="3.5" fill="#3EC7A6" opacity="0.8" />
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from={`0 ${CX} ${CY}`} to={`360 ${CX} ${CY}`} dur="46s" repeatCount="indefinite" />
+        <circle cx={CX + 215} cy={CY} r="4.5" fill="#8FA1C0" />
+        <circle cx={CX - 108} cy={CY - 186} r="3" fill="#38BDF8" opacity="0.7" />
+      </g>
+    </g>
+  </svg>
+</div>
+
+<style>
+  .orbitfx {
+    position: absolute;
+    inset: 0;
+    opacity: 0.55;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+  }
+  .orbitfx svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* latido del núcleo */
+  .core {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: core-beat 4s ease-in-out infinite;
+  }
+  .halo {
+    transform-box: fill-box;
+    transform-origin: center;
+    opacity: 0;
+    animation: halo-pulse 4s ease-out infinite;
+  }
+  @keyframes core-beat {
+    0%, 100% { transform: scale(1); }
+    12%      { transform: scale(1.25); }
+    24%      { transform: scale(1); }
+  }
+  @keyframes halo-pulse {
+    0%   { transform: scale(0.6); opacity: 0.7; }
+    60%  { transform: scale(1.8); opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .core, .halo { animation: none; }
+    .halo { opacity: 0.3; }
+    .sats { display: none; }
+  }
+</style>

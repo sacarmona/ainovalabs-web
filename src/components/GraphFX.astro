@@ -1,0 +1,106 @@
+---
+/*
+  Animación para Servicios: "red de conocimiento" — constelación de nodos
+  cuyas conexiones se dibujan y desvanecen en loop desfasado, y nodos que
+  titilan al conectarse. Solo SVG + CSS. Capa de fondo del header,
+  con más densidad hacia la derecha para no competir con el título.
+*/
+
+const nodes = [
+  { x: 660,  y: 120, r: 5,   delay: '0.5s' },
+  { x: 860,  y: 70,  r: 6,   delay: '1.8s' },
+  { x: 1050, y: 160, r: 5,   delay: '3.1s' },
+  { x: 740,  y: 300, r: 6,   delay: '4.4s' },
+  { x: 940,  y: 330, r: 5,   delay: '2.4s' },
+  { x: 1130, y: 300, r: 6,   delay: '5.6s' },
+  { x: 600,  y: 240, r: 4,   delay: '6.2s' },
+  { x: 850,  y: 210, r: 7,   delay: '0s' },
+  { x: 1020, y: 430, r: 4,   delay: '3.8s' },
+  { x: 330,  y: 90,  r: 3.5, delay: '5s' },
+  { x: 140,  y: 160, r: 3,   delay: '2s' },
+];
+
+const edges = [
+  { d: 'M 660 120 L 860 70',   dur: '7s',   delay: '0s' },
+  { d: 'M 860 70 L 1050 160',  dur: '8s',   delay: '1.3s' },
+  { d: 'M 660 120 L 850 210',  dur: '7.5s', delay: '2.6s' },
+  { d: 'M 850 210 L 940 330',  dur: '9s',   delay: '0.8s' },
+  { d: 'M 740 300 L 940 330',  dur: '8.5s', delay: '3.9s' },
+  { d: 'M 940 330 L 1130 300', dur: '7s',   delay: '5.1s' },
+  { d: 'M 600 240 L 660 120',  dur: '9.5s', delay: '4.4s' },
+  { d: 'M 850 210 L 1050 160', dur: '8s',   delay: '6s' },
+  { d: 'M 600 240 L 740 300',  dur: '7.5s', delay: '2s' },
+  { d: 'M 940 330 L 1020 430', dur: '9s',   delay: '6.8s' },
+  { d: 'M 330 90 L 660 120',   dur: '10s',  delay: '3.4s' },
+  { d: 'M 140 160 L 330 90',   dur: '10s',  delay: '7.4s' },
+];
+---
+
+<div class="graphfx" aria-hidden="true">
+  <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" fill="none">
+    <defs>
+      <linearGradient id="graph-g" x1="0" y1="0" x2="1200" y2="500" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#3EC7A6" />
+        <stop offset="1" stop-color="#38BDF8" />
+      </linearGradient>
+    </defs>
+
+    <!-- conexiones que se dibujan y desvanecen -->
+    <g stroke="url(#graph-g)" stroke-width="1.5" stroke-linecap="round">
+      {edges.map((e) => (
+        <path class="edge" pathLength="100" style={`--dur:${e.dur}; --delay:${e.delay}`} d={e.d} />
+      ))}
+    </g>
+
+    <!-- nodos que titilan -->
+    <g fill="url(#graph-g)">
+      {nodes.map((n) => (
+        <circle class="node" cx={n.x} cy={n.y} r={n.r} style={`--delay:${n.delay}`} />
+      ))}
+    </g>
+  </svg>
+</div>
+
+<style>
+  .graphfx {
+    position: absolute;
+    inset: 0;
+    opacity: 0.5;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  }
+  .graphfx svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .edge {
+    stroke-dasharray: 100 100;
+    stroke-dashoffset: 100;
+    opacity: 0.7;
+    animation: edge-draw var(--dur, 8s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+  }
+  @keyframes edge-draw {
+    0%        { stroke-dashoffset: 100; opacity: 0.7; }
+    45%       { stroke-dashoffset: 0;   opacity: 0.7; }
+    65%       { opacity: 0.7; }
+    85%, 100% { stroke-dashoffset: 0;   opacity: 0; }
+  }
+
+  .node {
+    opacity: 0.35;
+    animation: node-twinkle 7.5s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+  }
+  @keyframes node-twinkle {
+    0%, 30%   { opacity: 0.35; }
+    45%       { opacity: 1; }
+    60%, 100% { opacity: 0.35; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .edge { animation: none; stroke-dashoffset: 0; opacity: 0.35; }
+    .node { animation: none; }
+  }
+</style>
