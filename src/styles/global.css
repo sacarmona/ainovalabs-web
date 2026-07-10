@@ -19,8 +19,14 @@
   --color-ink-300: #b9c6dd;
   --color-ink-400: #8fa1c0;
 
+  /* Colores oficiales del logo AI-NOVA */
+  --color-brand-teal: #3ec7a6;
+  --color-brand-blue: #2e7fa8;
+  --color-brand-navy: #003e6c;
+
   --font-display: "Space Grotesk Variable", "Space Grotesk", system-ui, sans-serif;
   --font-body: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-logo: "Days One", "Space Grotesk", system-ui, sans-serif;
 }
 
 html {
@@ -39,9 +45,9 @@ body {
   color: white;
 }
 
-/* Texto con degradado de acento (palabras clave de titulares) */
+/* Texto con degradado de acento (palabras clave de titulares) — degradado del logo, aclarado para fondo oscuro */
 .text-gradient {
-  background: linear-gradient(92deg, var(--color-accent-400), var(--color-cyan-400));
+  background: linear-gradient(92deg, var(--color-brand-teal), var(--color-cyan-400));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

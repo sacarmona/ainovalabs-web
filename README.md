@@ -29,7 +29,11 @@ Editar un texto = editar el JSON y guardar. Nada más.
 
 ## Cómo cambiar colores y tipografía
 
-Un solo lugar: el bloque `@theme` de `src/styles/global.css`. Ahí están la paleta azul (`navy-*`, `accent-*`, `cyan-*`) y las fuentes.
+Un solo lugar: el bloque `@theme` de `src/styles/global.css`. Ahí están la paleta azul (`navy-*`, `accent-*`, `cyan-*`), los colores oficiales del logo (`brand-*`) y las fuentes.
+
+## Logo
+
+`src/components/Logo.astro` — recreación SVG del logo oficial (isotipo "AI" con degradado turquesa→azul + wordmark "AI-NOVA" en Days One). Prop `tone="light"` para fondos claros (wordmark azul marino #003E6C). Si se prefiere el archivo original en vez del SVG, reemplazar el contenido del componente por un `<img>` apuntando a `public/images/`.
 
 ## Formulario de contacto
 

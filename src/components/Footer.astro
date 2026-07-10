@@ -1,6 +1,7 @@
 ---
 import t from '../content/i18n/es.json';
 import site from '../content/site.json';
+import Logo from './Logo.astro';
 
 const year = new Date().getFullYear();
 ---
@@ -8,7 +9,7 @@ const year = new Date().getFullYear();
 <footer class="border-t border-white/10 bg-navy-900">
   <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-4 md:px-8">
     <div class="md:col-span-2">
-      <p class="font-display text-xl font-bold">AI-NOVA <span class="text-cyan-400">LABS</span></p>
+      <Logo size={40} />
       <p class="mt-3 max-w-md text-sm leading-relaxed text-ink-400">{t.footer.tagline}</p>
     </div>
 

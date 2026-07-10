@@ -1,5 +1,6 @@
 ---
 import t from '../content/i18n/es.json';
+import Logo from './Logo.astro';
 ---
 
 <header
@@ -7,18 +8,8 @@ import t from '../content/i18n/es.json';
   class="fixed inset-x-0 top-0 z-50 transition-colors duration-300"
 >
   <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-    <a href="/" class="flex items-center gap-2.5" aria-label="AI-NOVA Labs — Inicio">
-      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <rect x="2" y="2" width="36" height="36" rx="9" stroke="url(#lg)" stroke-width="3" />
-        <path d="M12 28 L20 11 L28 28 M15.5 22.5 H24.5" stroke="url(#lg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-        <defs>
-          <linearGradient id="lg" x1="0" y1="0" x2="40" y2="40">
-            <stop stop-color="#4f93ff" />
-            <stop offset="1" stop-color="#38bdf8" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <span class="font-display text-lg font-bold tracking-wide">AI-NOVA <span class="text-cyan-400">LABS</span></span>
+    <a href="/" class="flex items-center" aria-label="AI-NOVA Labs — Inicio">
+      <Logo size={38} />
     </a>
 
     <div class="hidden items-center gap-8 md:flex">
