@@ -112,7 +112,9 @@
       "message": "Mensaje"
     },
     "submit": "Enviar mensaje",
+    "submitting": "Enviando...",
     "successMessage": "¡Gracias! Tu mensaje fue enviado. Te contactaremos pronto.",
+    "errorMessage": "No pudimos enviar tu mensaje. Intenta de nuevo o escríbenos directo a nuestro correo.",
     "directTitle": "Contacto directo"
   },
   "pages": {

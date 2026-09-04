@@ -5,7 +5,7 @@
   "email": "contacto@ainovalabs.cl",
   "phones": ["+56 9 3753 5165", "+56 9 3780 4641"],
   "address": "Antonio Bellet 193, Oficina 1210, Providencia, Santiago, Chile",
-  "formEndpoint": "",
+  "formEndpoint": "https://formspree.io/f/xyeypzpp",
   "social": {
     "linkedin": "https://www.linkedin.com/company/ainovalabs",
     "instagram": ""
