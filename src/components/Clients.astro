@@ -18,9 +18,11 @@ import t from '../content/i18n/es.json';
       <p class="mt-4 text-lg text-ink-300">{t.clients.subtitle}</p>
     </div>
 
-    <ul class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <!-- Filas de hasta 3, siempre centradas: el 2.º cliente queda al medio de la
+         primera fila (hoy Enel Green Power) y los restantes se centran debajo. -->
+    <ul class="mx-auto mt-12 flex max-w-4xl flex-wrap justify-center gap-5">
       {t.clients.items.map((c) => (
-        <li class="reveal">
+        <li class="reveal w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.84rem)]">
           <a
             href={c.url}
             target="_blank"
