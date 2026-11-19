@@ -80,7 +80,23 @@
       {
         "name": "Casinos Bistró",
         "logo": "/images/clients/casinos-bistro.jpg",
-        "url": "https://www.casinosbistro.cl/"
+        "url": "https://www.casinosbistro.cl/",
+        "fill": true
+      },
+      {
+        "name": "Enel Green Power",
+        "logo": "/images/clients/enel-green-power.png",
+        "url": "https://www.enelgreenpower.com/"
+      },
+      {
+        "name": "REFT",
+        "logo": "/images/clients/reft.png",
+        "url": "https://reft.cl/"
+      },
+      {
+        "name": "Covarrubias y Espinoza Propiedades",
+        "logo": "/images/clients/covarrubias-espinoza.png",
+        "url": "https://www.propiedadescye.cl/"
       }
     ]
   },

@@ -2,8 +2,11 @@
 /*
   Sección de clientes. Para sumar uno: agregar un objeto en
   `clients.items` de src/content/i18n/es.json y dejar su logo en
-  public/images/clients/. Los logos se muestran sobre una tarjeta
-  propia, así que funcionan con fondo claro u oscuro.
+  public/images/clients/.
+  - Logos transparentes con texto claro (lo habitual): se centran con
+    margen dentro de la tarjeta oscura.
+  - Logos que ya traen su propio fondo (JPG): usar "fill": true para
+    que ocupen toda la tarjeta.
 */
 import t from '../content/i18n/es.json';
 ---
@@ -15,7 +18,7 @@ import t from '../content/i18n/es.json';
       <p class="mt-4 text-lg text-ink-300">{t.clients.subtitle}</p>
     </div>
 
-    <ul class="mt-12 flex flex-wrap items-stretch justify-center gap-6">
+    <ul class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {t.clients.items.map((c) => (
         <li class="reveal">
           <a
@@ -23,15 +26,16 @@ import t from '../content/i18n/es.json';
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${c.name} (abre en una pestaña nueva)`}
-            class="group block w-64 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition hover:border-accent-500/50 hover:bg-white/[0.06]"
+            class="group flex h-36 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-[#202c42] transition hover:border-accent-500/60"
           >
             <img
               src={c.logo}
               alt={c.name}
-              width="467"
-              height="220"
               loading="lazy"
-              class="h-auto w-full transition duration-500 group-hover:scale-105"
+              class={
+                'transition duration-500 group-hover:scale-105 ' +
+                (c.fill ? 'h-full w-auto max-w-full object-contain' : 'max-h-16 max-w-[70%] object-contain')
+              }
             />
           </a>
         </li>
