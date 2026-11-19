@@ -73,6 +73,17 @@
       { "icon": "rocket", "title": "Escalamiento", "text": "Llevamos la solución de piloto a servicio productivo, listo para crecer." }
     ]
   },
+  "clients": {
+    "title": "Empresas que confían en nosotros",
+    "subtitle": "Trabajamos con organizaciones que buscan convertir la tecnología en resultados.",
+    "items": [
+      {
+        "name": "Casinos Bistró",
+        "logo": "/images/clients/casinos-bistro.jpg",
+        "url": "https://www.casinosbistro.cl/"
+      }
+    ]
+  },
   "cta": {
     "title": "Aquí comienza ese camino",
     "text": "¿Tienes un desafío industrial que la tecnología puede resolver? Conversemos sobre cómo convertirlo en tu próxima ventaja competitiva.",

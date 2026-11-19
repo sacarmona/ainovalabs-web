@@ -1,0 +1,41 @@
+---
+/*
+  Sección de clientes. Para sumar uno: agregar un objeto en
+  `clients.items` de src/content/i18n/es.json y dejar su logo en
+  public/images/clients/. Los logos se muestran sobre una tarjeta
+  propia, así que funcionan con fondo claro u oscuro.
+*/
+import t from '../content/i18n/es.json';
+---
+
+<section id="clientes" class="py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5 md:px-8">
+    <div class="reveal mx-auto max-w-2xl text-center">
+      <h2 class="font-display text-3xl font-bold md:text-5xl">{t.clients.title}</h2>
+      <p class="mt-4 text-lg text-ink-300">{t.clients.subtitle}</p>
+    </div>
+
+    <ul class="mt-12 flex flex-wrap items-stretch justify-center gap-6">
+      {t.clients.items.map((c) => (
+        <li class="reveal">
+          <a
+            href={c.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${c.name} (abre en una pestaña nueva)`}
+            class="group block w-64 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition hover:border-accent-500/50 hover:bg-white/[0.06]"
+          >
+            <img
+              src={c.logo}
+              alt={c.name}
+              width="467"
+              height="220"
+              loading="lazy"
+              class="h-auto w-full transition duration-500 group-hover:scale-105"
+            />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
