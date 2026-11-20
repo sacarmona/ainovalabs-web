@@ -1,0 +1,151 @@
+---
+/*
+  Página de almacenamiento de energía (partnership NOMAD Power).
+  Todo el texto vive en src/content/i18n/es.json, bloque "nomad".
+  Logo de NOMAD: versión "Color (Dark BG)" descargada de https://nomadpower.com/brand,
+  sin modificar y sobre fondo oscuro (regla del sitio de marca de NOMAD).
+*/
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import DividerFX from '../components/DividerFX.astro';
+import WaveFX from '../components/WaveFX.astro';
+import t from '../content/i18n/es.json';
+
+const n = t.nomad;
+---
+
+<Base title={`${n.pageTitle} — AI-NOVA Labs`} description={n.intro}>
+  <PageHeader title={n.title} intro={n.intro}>
+    <WaveFX slot="fx" />
+  </PageHeader>
+
+  <!-- Insignia partner + cifras clave -->
+  <section class="pb-16 md:pb-20">
+    <div class="mx-auto max-w-7xl px-5 md:px-8">
+      <div class="reveal mb-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
+        <div class="rounded-2xl border border-white/10 bg-black px-8 py-6">
+          <img src="/images/nomad/logo-color-dark.svg" alt="NOMAD Power" width="432" height="77" class="h-9 w-auto md:h-11" />
+        </div>
+        <p class="inline-flex items-center gap-2 rounded-full border border-accent-500/40 bg-accent-500/10 px-4 py-1.5 text-sm font-semibold text-accent-400">
+          <span class="h-2 w-2 rounded-full bg-brand-teal"></span>{n.badge}
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-5 md:grid-cols-4">
+        {n.headline.map((h) => (
+          <div class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center">
+            <p class="font-display text-2xl font-bold text-gradient md:text-3xl">{h.value}</p>
+            <p class="mt-2 text-sm leading-snug text-ink-400">{h.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- El equipo -->
+  <section class="pb-20 md:pb-28">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 md:px-8 lg:grid-cols-2">
+      <div class="reveal">
+        <p class="text-sm font-semibold uppercase tracking-widest text-accent-400">{n.equipment.kicker}</p>
+        <h2 class="mt-3 font-display text-3xl font-bold md:text-4xl">{n.equipment.title}</h2>
+        <p class="mt-5 leading-relaxed text-ink-300">{n.equipment.text}</p>
+        <p class="mt-4 leading-relaxed text-ink-300">{n.equipment.text2}</p>
+      </div>
+      <div class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
+        <h3 class="font-display text-xl font-bold">{n.equipment.specsTitle}</h3>
+        <dl class="mt-4 divide-y divide-white/10">
+          {n.equipment.specs.map((s) => (
+            <div class="flex flex-col gap-1 py-3 sm:flex-row sm:justify-between sm:gap-6">
+              <dt class="text-ink-400">{s.label}</dt>
+              <dd class="font-medium sm:text-right">{s.value}</dd>
+            </div>
+          ))}
+        </dl>
+        <p class="mt-4 text-xs leading-relaxed text-ink-400">{n.equipment.note}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aplicaciones -->
+  <section class="border-y border-white/10 bg-navy-900/60 py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-5 md:px-8">
+      <div class="reveal mx-auto max-w-2xl text-center">
+        <h2 class="font-display text-3xl font-bold md:text-5xl">{n.applications.title}</h2>
+        <p class="mt-4 text-lg text-ink-300">{n.applications.subtitle}</p>
+      </div>
+      <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {n.applications.items.map((a, i) => (
+          <div class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-7">
+            <p class="font-display text-3xl font-bold text-gradient">{String(i + 1).padStart(2, '0')}</p>
+            <h3 class="mt-3 font-display text-xl font-bold">{a.title}</h3>
+            <p class="mt-3 leading-relaxed text-ink-400">{a.text}</p>
+          </div>
+        ))}
+      </div>
+      <p class="reveal mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-ink-400">{n.applications.caveat}</p>
+    </div>
+  </section>
+
+  <!-- Referencias -->
+  <section class="py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-5 md:px-8">
+      <div class="reveal mx-auto max-w-2xl text-center">
+        <h2 class="font-display text-3xl font-bold md:text-5xl">{n.references.title}</h2>
+        <p class="mt-4 text-lg text-ink-300">{n.references.subtitle}</p>
+      </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        {n.references.items.map((r) => (
+          <div class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-7">
+            <h3 class="font-display text-xl font-bold">{r.name}</h3>
+            <p class="mt-1 text-sm font-semibold text-accent-400">{r.place}</p>
+            <p class="mt-3 leading-relaxed text-ink-400">{r.text}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-6 text-center text-xs text-ink-400">{n.references.source}</p>
+    </div>
+  </section>
+
+  <!-- Cómo trabajamos juntos -->
+  <section class="border-t border-white/10 bg-navy-900/60 py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-5 md:px-8">
+      <div class="reveal mx-auto max-w-2xl text-center">
+        <h2 class="font-display text-3xl font-bold md:text-5xl">{n.work.title}</h2>
+        <p class="mt-4 text-lg text-ink-300">{n.work.subtitle}</p>
+      </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-2">
+        {[n.work.ainova, n.work.nomad].map((w) => (
+          <div class="reveal rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+            <h3 class="font-display text-xl font-bold">{w.title}</h3>
+            <p class="mt-3 leading-relaxed text-ink-400">{w.text}</p>
+          </div>
+        ))}
+      </div>
+      <ol class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {n.work.steps.map((s, i) => (
+          <li class="reveal rounded-2xl border border-white/10 p-6">
+            <p class="font-display text-3xl font-bold text-gradient">{String(i + 1).padStart(2, '0')}</p>
+            <h3 class="mt-2 font-display text-lg font-bold">{s.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-400">{s.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <DividerFX />
+
+  <section class="relative overflow-hidden py-24 md:py-32">
+    <div class="absolute left-1/2 top-1/2 h-[420px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-500/15 blur-[130px]" aria-hidden="true"></div>
+    <div class="reveal relative z-10 mx-auto max-w-3xl px-5 text-center md:px-8">
+      <h2 class="font-display text-3xl font-bold md:text-5xl">{n.cta.title}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-ink-300">{n.cta.text}</p>
+      <a
+        href="/contacto"
+        class="mt-9 inline-block rounded-full bg-accent-500 px-8 py-3.5 font-semibold text-white shadow-lg shadow-accent-500/30 transition hover:bg-accent-400"
+      >
+        {n.cta.primary}
+      </a>
+      <p class="mt-10 text-xs leading-relaxed text-ink-400">{n.disclaimer}</p>
+    </div>
+  </section>
+</Base>

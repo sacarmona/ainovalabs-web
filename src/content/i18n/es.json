@@ -4,6 +4,7 @@
       { "label": "Servicios", "href": "/servicios" },
       { "label": "Robótica", "href": "/robotica" },
       { "label": "EnerLabsQ", "href": "/enerlabsq" },
+      { "label": "Almacenamiento", "href": "/nomad" },
       { "label": "Nosotros", "href": "/nosotros" }
     ],
     "cta": "Contáctanos"
@@ -107,6 +108,91 @@
       }
     ]
   },
+  "nomad": {
+    "badge": "Partner de NOMAD Power en Chile",
+    "pageTitle": "Almacenamiento de energía transportable",
+    "title": "Baterías de 1,25 MW que se mueven en camión",
+    "intro": "AI-NOVA Labs es partner en Chile de NOMAD Power, fabricante estadounidense de sistemas de almacenamiento en baterías montados en semirremolque. Llegan al sitio cerrados, se conectan en torno a una hora y, cuando la necesidad cambia de lugar, se van con ella.",
+    "teaser": {
+      "kicker": "Nuevo · Almacenamiento de energía",
+      "title": "NOMAD Voyager Osprey: 1,25 MW / 2,5 MWh sobre ruedas",
+      "text": "Somos partner de NOMAD Power en Chile. Evaluamos tu caso, dimensionamos la flota y conducimos la importación, la conexión y la puesta en servicio.",
+      "cta": "Conoce el Voyager Osprey"
+    },
+    "headline": [
+      { "value": "1.250 kW", "label": "Potencia nominal del inversor" },
+      { "value": "2.500 kWh", "label": "Energía de placa en corriente continua" },
+      { "value": "~1 h", "label": "Conexión en sitio con PowerDock" },
+      { "value": "400 V · 50 Hz", "label": "Trifásico, nativo para Chile" }
+    ],
+    "equipment": {
+      "kicker": "El equipo",
+      "title": "Una central de 1,25 MW que se traslada en camión",
+      "text": "El Voyager Osprey es el modelo de mayor potencia de la serie Voyager. Integra celdas prismáticas de litio-ferrofosfato (LFP), inversor bidireccional, climatización líquida, detección de gases, supresión de incendio y protección contra deflagración en un contenedor de 20 pies que viaja sobre su propio semirremolque y puede descargarse para operar en suelo.",
+      "text2": "La conexión se hace mediante el PowerDock de NOMAD y un skid de transformación: la obra en sitio se reduce a una plataforma nivelada y el empalme en media tensión. Opera conectado a la red, en isla o en paralelo con grupos generadores, y queda monitoreado desde el centro de operaciones de NOMAD.",
+      "specsTitle": "Especificaciones principales",
+      "specs": [
+        { "label": "Potencia nominal", "value": "1.250 kW, limitable por consigna" },
+        { "label": "Energía de placa", "value": "2.500 kWh CC, inicio de vida" },
+        { "label": "Descarga a plena potencia", "value": "≈ 1,7 h" },
+        { "label": "Tensión y frecuencia", "value": "400 V · 50 Hz · trifásico" },
+        { "label": "Rendimiento ida y vuelta", "value": "89 % a 25 °C y carga nominal" },
+        { "label": "Química", "value": "LFP prismática, refrigeración líquida" },
+        { "label": "Ciclos", "value": "6.000 al 80 % de estado de salud" },
+        { "label": "Modos de operación", "value": "Red, isla, off-grid con generador" },
+        { "label": "Dimensiones con tráiler", "value": "11,19 × 2,44 × 3,96 m" },
+        { "label": "Ruido", "value": "75 dBA a 1 m" }
+      ],
+      "note": "Datos preliminares informados por NOMAD Power; sujetos a confirmación en la cotización formal. El Osprey aún no registra instalaciones comerciales."
+    },
+    "applications": {
+      "title": "Dónde rinde un BESS que se puede mover",
+      "subtitle": "Un equipo transportable aparece cuando la necesidad tiene fecha de término, cambia de ubicación o llega antes que la infraestructura definitiva.",
+      "items": [
+        { "title": "Energía vertida en plantas ERNC", "text": "Carga en las horas de recorte de una planta solar o eólica y descarga en horario de mayor precio, en el mismo sitio o en otro al que llegue el camión." },
+        { "title": "Reserva rodante en faenas aisladas", "text": "En una faena minera con generación diésel en isla, la batería toma la carga en milisegundos si un grupo sale de servicio, reduciendo horas de motor y combustible." },
+        { "title": "Energía antes del empalme", "text": "Proyectos en construcción, centros de datos o electrolineras que necesitan potencia antes de que la distribuidora energice el empalme definitivo." },
+        { "title": "Control de demanda en punta", "text": "Recorta los peaks de 15 a 60 minutos que definen el cargo por demanda en horas de punta; un mismo equipo puede atender más de una instalación en el año." },
+        { "title": "Respaldo ante cortes y mantenciones", "text": "Mantiene el suministro durante trabajos programados o fallas prolongadas, sin instalar grupos diésel temporales." },
+        { "title": "Suavizado de rampas solares", "text": "Absorbe las caídas por nubosidad y los rebotes de potencia para cumplir los límites de rampa exigidos por el coordinador o la distribuidora." }
+      ],
+      "caveat": "Si la carga es permanente y el sitio no se moverá en veinte años, un BESS fijo suele ser más barato por MWh. Lo evaluamos en paralelo para recomendarte lo que más te conviene."
+    },
+    "references": {
+      "title": "Referencias en operación",
+      "subtitle": "Instalaciones de modelos anteriores de la familia NOMAD.",
+      "items": [
+        { "name": "DSO Electric Cooperative", "place": "Kansas, EE. UU.", "text": "Piloto de control de punta con integración a la red de distribución en menos de un día. La cooperativa adquirió posteriormente las unidades." },
+        { "name": "Green Mountain Power", "place": "Vermont, EE. UU.", "text": "Gestión de punta y continuidad durante mantenciones, con un proyecto que prevé varias unidades en distintos sitios de su zona de concesión." },
+        { "name": "Missanabie Cree First Nation", "place": "Ontario, Canadá", "text": "Comunidad remota que incorporó el equipo a su plan de emergencias para reducir la dependencia del diésel." }
+      ],
+      "source": "Fuente: nomadpower.com y comunicados de NOMAD Power, 2026."
+    },
+    "work": {
+      "title": "Cómo trabajamos juntos",
+      "subtitle": "NOMAD fabrica y respalda el equipo; AI-NOVA Labs es tu contraparte local durante todo el proyecto.",
+      "ainova": {
+        "title": "AI-NOVA Labs · Chile",
+        "text": "Evaluamos el caso con los datos horarios del cliente, dimensionamos la flota, preparamos el caso de negocio y la ingeniería de conexión, y conducimos la tramitación, la importación y la puesta en servicio. Somos la contraparte local durante la operación."
+      },
+      "nomad": {
+        "title": "NOMAD Power · EE. UU.",
+        "text": "Diseña y fabrica los equipos en Vermont, otorga la garantía, opera el monitoreo remoto 24/7 desde su centro de operaciones y presta el servicio de repuestos y reemplazo de baterías."
+      },
+      "steps": [
+        { "title": "Diagnóstico", "text": "Perfil de carga o de vertimiento y punto de conexión." },
+        { "title": "Dimensionamiento", "text": "Número de unidades, régimen de ciclado y costo nivelado." },
+        { "title": "Propuesta", "text": "Cotización formal de NOMAD y alcance local de AI-NOVA." },
+        { "title": "Despliegue", "text": "Importación, conexión, pruebas y operación." }
+      ]
+    },
+    "cta": {
+      "title": "¿Tienes un caso para almacenamiento transportable?",
+      "text": "Cuéntanos tu perfil de carga o tu punto de conexión y evaluamos si un Voyager Osprey es la solución adecuada.",
+      "primary": "Solicitar evaluación"
+    },
+    "disclaimer": "NOMAD, NOMAD Power y Voyager son marcas de sus respectivos titulares. Las especificaciones pueden cambiar; cada proyecto requiere cotización formal."
+  },
   "cta": {
     "title": "Aquí comienza ese camino",
     "text": "¿Tienes un desafío industrial que la tecnología puede resolver? Conversemos sobre cómo convertirlo en tu próxima ventaja competitiva.",
@@ -129,7 +215,8 @@
         "links": [
           { "label": "Robótica", "href": "/robotica" },
           { "label": "I+D", "href": "/servicios" },
-          { "label": "EnerLabsQ", "href": "/enerlabsq" }
+          { "label": "EnerLabsQ", "href": "/enerlabsq" },
+          { "label": "Almacenamiento NOMAD", "href": "/nomad" }
         ]
       }
     ],
