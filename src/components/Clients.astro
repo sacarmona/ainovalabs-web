@@ -36,7 +36,9 @@ import t from '../content/i18n/es.json';
               loading="lazy"
               class={
                 'transition duration-500 group-hover:scale-105 ' +
-                (c.fill ? 'h-full w-auto max-w-full object-contain' : 'max-h-16 max-w-[70%] object-contain')
+                (c.fill
+                  ? (c.size === 'sm' ? 'h-[72%] w-auto max-w-full object-contain' : 'h-full w-auto max-w-full object-contain')
+                  : (c.size === 'lg' ? 'max-h-24 max-w-[88%] object-contain' : 'max-h-16 max-w-[70%] object-contain'))
               }
             />
           </a>

@@ -81,12 +81,14 @@
         "name": "Casinos Bistró",
         "logo": "/images/clients/casinos-bistro.jpg",
         "url": "https://www.casinosbistro.cl/",
-        "fill": true
+        "fill": true,
+        "size": "sm"
       },
       {
         "name": "Enel Green Power",
         "logo": "/images/clients/enel-green-power.png",
-        "url": "https://www.enelgreenpower.com/"
+        "url": "https://www.enelgreenpower.com/",
+        "size": "lg"
       },
       {
         "name": "REFT",
