@@ -130,6 +130,7 @@
       "title": "Una central de 1,25 MW que se traslada en camión",
       "text": "El Voyager Osprey es el modelo de mayor potencia de la serie Voyager. Integra celdas prismáticas de litio-ferrofosfato (LFP), inversor bidireccional, climatización líquida, detección de gases, supresión de incendio y protección contra deflagración en un contenedor de 20 pies que viaja sobre su propio semirremolque y puede descargarse para operar en suelo.",
       "text2": "La conexión se hace mediante el PowerDock de NOMAD y un skid de transformación: la obra en sitio se reduce a una plataforma nivelada y el empalme en media tensión. Opera conectado a la red, en isla o en paralelo con grupos generadores, y queda monitoreado desde el centro de operaciones de NOMAD.",
+      "imageCaption": "Familia Voyager (en la imagen, el modelo Eagle). Imagen: NOMAD Power.",
       "specsTitle": "Especificaciones principales",
       "specs": [
         { "label": "Potencia nominal", "value": "1.250 kW, limitable por consigna" },
