@@ -4,7 +4,7 @@
       { "label": "Servicios", "href": "/servicios" },
       { "label": "Robótica", "href": "/robotica" },
       { "label": "EnerLabsQ", "href": "/enerlabsq" },
-      { "label": "Almacenamiento", "href": "/nomad" },
+      { "label": "BESS Móvil", "href": "/nomad" },
       { "label": "Nosotros", "href": "/nosotros" }
     ],
     "cta": "Contáctanos"
@@ -110,11 +110,11 @@
   },
   "nomad": {
     "badge": "Partner de NOMAD Power en Chile",
-    "pageTitle": "Almacenamiento de energía transportable",
+    "pageTitle": "BESS Móvil: almacenamiento de energía transportable",
     "title": "Baterías de 1,25 MW que se mueven en camión",
     "intro": "AI-NOVA Labs es partner en Chile de NOMAD Power, fabricante estadounidense de sistemas de almacenamiento en baterías montados en semirremolque. Llegan al sitio cerrados, se conectan en torno a una hora y, cuando la necesidad cambia de lugar, se van con ella.",
     "teaser": {
-      "kicker": "Nuevo · Almacenamiento de energía",
+      "kicker": "Nuevo · BESS Móvil",
       "title": "NOMAD Voyager Osprey: 1,25 MW / 2,5 MWh sobre ruedas",
       "text": "Somos partner de NOMAD Power en Chile. Evaluamos tu caso, dimensionamos la flota y conducimos la importación, la conexión y la puesta en servicio.",
       "cta": "Conoce el Voyager Osprey"
@@ -217,7 +217,7 @@
           { "label": "Robótica", "href": "/robotica" },
           { "label": "I+D", "href": "/servicios" },
           { "label": "EnerLabsQ", "href": "/enerlabsq" },
-          { "label": "Almacenamiento NOMAD", "href": "/nomad" }
+          { "label": "BESS Móvil", "href": "/nomad" }
         ]
       }
     ],
