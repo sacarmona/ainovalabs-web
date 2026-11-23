@@ -156,8 +156,7 @@
         { "title": "Control de demanda en punta", "text": "Recorta los peaks de 15 a 60 minutos que definen el cargo por demanda en horas de punta; un mismo equipo puede atender más de una instalación en el año." },
         { "title": "Respaldo ante cortes y mantenciones", "text": "Mantiene el suministro durante trabajos programados o fallas prolongadas, sin instalar grupos diésel temporales." },
         { "title": "Suavizado de rampas solares", "text": "Absorbe las caídas por nubosidad y los rebotes de potencia para cumplir los límites de rampa exigidos por el coordinador o la distribuidora." }
-      ],
-      "caveat": "Si la carga es permanente y el sitio no se moverá en veinte años, un BESS fijo suele ser más barato por MWh. Lo evaluamos en paralelo para recomendarte lo que más te conviene."
+      ]
     },
     "references": {
       "title": "Referencias en operación",
